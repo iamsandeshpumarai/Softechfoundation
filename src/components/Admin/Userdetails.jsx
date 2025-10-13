@@ -11,7 +11,7 @@ const queryClient = useQueryClient()
     {
   mutationKey:['deletedata'],
   mutationFn:async function(id){
-const data = await axios.delete(`https://softechbackend.onrender.com/user/${id}`)
+const data = await axios.delete(`https://softechbackend-1.onrender.com/user/${id}`)
 return data
   },
   onSuccess:()=>{
