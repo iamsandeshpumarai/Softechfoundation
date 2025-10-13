@@ -11,16 +11,12 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-
-
-
-
 const ScrollableBarChart = () => {
 
   const {data} = useQuery({
     queryKey:['userchart'],
     queryFn:async function(){
-     const data =  await axios.get('https://softechbackend.onrender.com/admin/userdata', { withCredentials: true })
+     const data =  await axios.get('https://softechbackend-1.onrender.com/admin/userdata', { withCredentials: true })
      return data
      
     },
