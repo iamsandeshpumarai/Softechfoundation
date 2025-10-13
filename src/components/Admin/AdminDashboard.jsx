@@ -14,7 +14,7 @@ const AdminDashboard = () => {
   const { data, isLoading, isError } = useQuery({
     queryKey: ['userdetails'],
     queryFn: async () => {
-      const res = await axios.get('https://softechbackend.onrender.com/admin/userdata', { withCredentials: true })
+      const res = await axios.get('https://softechbackend-1.onrender.com/admin/userdata', { withCredentials: true })
       return res.data
     },
     onSuccess:(data)=>{
