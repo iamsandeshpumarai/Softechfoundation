@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React from "react";
+
 
 const Ad = ({ img, btntext, subheading, quote, text }) => {
   return (

@@ -1,3 +1,5 @@
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 import React from "react";
 import {
   BarChart,
@@ -9,19 +11,27 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-// Use your dummyUsers array here
-const dummyUsers = [
-  { FirstName: "John", LastName: "Doe", CompanyName: "TechCorp", BusinessEmail: "john.doe@techcorp.com", Jobtitle: "Developer", PhoneNumber: "+1-202-555-0143", Country: "USA" },
-  { FirstName: "Alice", LastName: "Smith", CompanyName: "InnovateX", BusinessEmail: "alice.smith@innovatex.com", Jobtitle: "Manager", PhoneNumber: "+44-20-7946-0011", Country: "UK" },
-  { FirstName: "Raj", LastName: "Sharma", CompanyName: "GlobalTech", BusinessEmail: "raj.sharma@globaltech.com", Jobtitle: "Analyst", PhoneNumber: "+91-98765-43210", Country: "India" },
-  { FirstName: "Maria", LastName: "Lopez", CompanyName: "SoftSolutions", BusinessEmail: "maria.lopez@softsolutions.com", Jobtitle: "Designer", PhoneNumber: "+34-912-345-678", Country: "Spain" },
-  // ...add more or generate 200 entries
-];
 
-const ScrollableBarChart = ({ users }) => {
+
+
+
+const ScrollableBarChart = () => {
+
+  const {data} = useQuery({
+    queryKey:['userchart'],
+    queryFn:async function(){
+     const data =  await axios.get('https://softechbackend.onrender.com/admin/userdata', { withCredentials: true })
+     return data
+     
+    },
+    
+    
+
+  },
+)
   // Aggregate data by country
   const countryMap = {};
-  users.forEach((user) => {
+  data?.data?.userdata.forEach((user) => {
     const country = user.Country || "Unknown";
     countryMap[country] = (countryMap[country] || 0) + 1;
   });
@@ -30,7 +40,7 @@ const ScrollableBarChart = ({ users }) => {
     name,
     value,
   }));
-
+console.log(data?.data?.userdata,'is the data')
   return (
     <div className="w-full overflow-x-auto p-4 bg-white rounded shadow">
       <h2 className="text-xl font-bold text-center mb-4">Users by Country</h2>
@@ -56,12 +66,12 @@ const ScrollableBarChart = ({ users }) => {
 };
 
 // Usage
-const Card = () => {
+const Chart = () => {
   return (
-    <div className="md:hidden sm:flex sm:flex-col sm:items-center">
-      <ScrollableBarChart users={dummyUsers} />
+    <div className=" sm:flex sm:flex-col sm:items-center">
+      <ScrollableBarChart  />
     </div>
   );
 };
 
-export default Card;
+export default Chart;
