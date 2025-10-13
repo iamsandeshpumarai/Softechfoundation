@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import { ScrollTop } from "../../Scroll";
 
 const Ad = ({ img, btntext, subheading, quote, text }) => {
   return (
@@ -17,7 +17,7 @@ const Ad = ({ img, btntext, subheading, quote, text }) => {
           <p>{text}</p>
 
           {/* 🌟 Animated Button */}
-          <button
+          <button onClick={ScrollTop}
             className="w-[140px] h-[40px] rounded-md text-white bg-[#006DEE]
                        
                        transform transition-transform duration-300 ease-in-out
