@@ -19,7 +19,7 @@ const HeroForm = () => {
 const sendData =  useMutation({
   mutationKey:['Userdata'],
   mutationFn: async  function (datas){
-const data = await axios.post('https://softechbackend-1.onrender.com/user',datas)
+const data = await axios.post('https://softechbackend-2.onrender.com/user',datas)
 return data
   },
   onMutate:()=>{

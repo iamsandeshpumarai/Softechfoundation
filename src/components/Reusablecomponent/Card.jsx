@@ -18,6 +18,7 @@ const dummyUsers = [
   // ...add more or generate 200 entries
 ];
 
+
 const ScrollableBarChart = ({ users }) => {
   // Aggregate data by country
   const countryMap = {};
@@ -33,7 +34,7 @@ const ScrollableBarChart = ({ users }) => {
 
   return (
     <div className="w-full overflow-x-auto p-4 bg-white rounded shadow">
-      <h2 className="text-xl font-bold text-center mb-4">Users by Country</h2>
+      <h2 className="text-xl font-bold text-center mb-4"></h2>
       <div style={{ width: chartData.length * 50, minWidth: "100%" }}>
         <ResponsiveContainer width="100%" height={400}>
           <BarChart data={chartData}>
@@ -64,4 +65,4 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default Card

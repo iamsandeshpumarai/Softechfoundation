@@ -1,17 +1,14 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
-import React from "react";
-import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 
 const Userdetails = ({ userData=[] }) => {
-const navigate =  useNavigate()
 const queryClient = useQueryClient()
   const deleteUser = useMutation(
     {
   mutationKey:['deletedata'],
   mutationFn:async function(id){
-const data = await axios.delete(`https://softechbackend-1.onrender.com/user/${id}`)
+const data = await axios.delete(`https://softechbackend-2.onrender.com/user/${id}`)
 return data
   },
   onSuccess:()=>{

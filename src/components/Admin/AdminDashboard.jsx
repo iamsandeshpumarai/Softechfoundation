@@ -11,10 +11,10 @@ const AdminDashboard = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true)
 
   const location = useLocation()
-  const { data, isLoading, isError } = useQuery({
+  const { data=[],isLoading,isError } = useQuery({
     queryKey: ['userdetails'],
     queryFn: async () => {
-      const res = await axios.get('https://softechbackend-1.onrender.com/admin/userdata', { withCredentials: true })
+      const res = await axios.get('https://softechbackend-2.onrender.com/admin/userdata', { withCredentials: true })
       return res.data
     },
     onSuccess:(data)=>{
@@ -29,6 +29,8 @@ console.log(data)
   const navLinks = [
     { name: 'Users', short: 'U', path: '/admindashboard' },
     { name: 'Analytics', short: 'A', path: '/admindashboard/chart' },
+
+    { name: 'EditPanel', short: 'A', path: '/admindashboard/EditPanel' },
   ]
 
   return (

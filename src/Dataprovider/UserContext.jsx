@@ -9,7 +9,7 @@ export const TokenProvider = ({ children }) => {
     queryKey: ["userlogin"],
     queryFn: async () => {
       try {
-        const res = await axios.get("https://softechbackend-1.onrender.com/admin/check", {
+        const res = await axios.get("https://softechbackend-2.onrender.com/admin/check", {
           withCredentials: true,
         });
         return res.data; // Return the data directly

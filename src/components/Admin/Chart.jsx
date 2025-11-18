@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import React from "react";
 import {
   BarChart,
   Bar,
@@ -16,7 +15,7 @@ const ScrollableBarChart = () => {
   const {data} = useQuery({
     queryKey:['userchart'],
     queryFn:async function(){
-     const data =  await axios.get('https://softechbackend-1.onrender.com/admin/userdata', { withCredentials: true })
+     const data =  await axios.get('https://softechbackend-2.onrender.com/admin/userdata', { withCredentials: true })
      return data
      
     },

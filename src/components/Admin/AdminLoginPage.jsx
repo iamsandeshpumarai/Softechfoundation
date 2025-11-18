@@ -13,7 +13,7 @@ const queryClient = useQueryClient()
     mutationKey: ["admindata"],
     mutationFn: async (admindata) => {
       const res = await axios.post(
-        "https://softechbackend-1.onrender.com/admin/adminlogin",
+        "https://softechbackend-2.onrender.com/admin/adminlogin",
         admindata,
         { withCredentials: true }
       );
