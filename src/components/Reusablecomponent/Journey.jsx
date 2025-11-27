@@ -10,11 +10,11 @@ const Journey = ({data}) => {
 
 {
   data[0]?.journey?.items.map((data,index)=>{
-    return <div key={index} className='xl:flex flex flex-col items-center mb-6  md:mb-8 xl:flex-col  xl:items-center md:flex md:justify-center md:flex-col md:items-center'>
-    <div className='logo  '>
-        <img src={data?.image} className='md:w-[140px] w-[80px]' alt="" />
+    return <div key={index} className=' xl:flex flex flex-col items-center mb-6  md:mb-8 xl:flex-col  xl:items-center md:flex md:justify-center md:flex-col md:items-center'>
+    <div className='logo '>
+        <img src={data?.image} className='md:w-[180px] w-[80px]' alt="" />
     </div>
-    <div className='title font-semibold mt-4 mb-4  xl:text-center xl:text-[19px] xl:w-[40%]'>{data?.title}</div>
+    <div className='title font-semibold mt-4 mb-4 w-[100%] text-center xl:text-center xl:text-[19px] '>{data?.title}</div>
     <div className=' xl:font-normal text-center w-[80%] font-light'>{data?.content}</div>
     </div>
     })

@@ -17,7 +17,7 @@ const Testimonial = ({data}) => {
 <div className='info h-full  flex flex-col justify-center'>
 <p className='font-bold  xl:font-medium md:text-[27px]'>{data[0]?.testimonials[0]?.name}</p>
 <p className='md:text-[17px]'>{data[0]?.testimonials[0]?.role}</p>
-<img src={testimonialData.logo} className='w-[120px]' alt="" />
+
 </div>
 
 </div>

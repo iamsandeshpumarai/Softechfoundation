@@ -652,14 +652,7 @@ const updateTestimonials = async () => {
             </button>
           </div>
         ))}
-        <button
-          onClick={() =>
-            addField(setTestimonials, { image: "", name: "", role: "", comment: "", preview: "" })
-          }
-          className="px-3 py-1 border rounded bg-gray-100"
-        >
-          +
-        </button>
+    
       </section>
       <button className="p-2 bg-[green] text-white  border rounded-md " onClick={updateTestimonials}>
         Update Testimonials

@@ -51,7 +51,7 @@ return data
     sendData.mutate(data);}
 
   return (
-    <motion.div initial={{x:200,opacity:0}} animate={{x:0,opacity:1}} transition={{duration:0.5}} className="md:w-full md:h-full flex justify-center">
+    <motion.div initial={{x:200,opacity:0}}  animate={{x:0,opacity:1}} transition={{duration:0.5}} className="md:w-full md:h-[80%] flex justify-center">
       <div className="md:w-[70%] w-[100%] border-none rounded-xl shadow-lg bg-[#EDF4FF]">
         <h2 className="text-center text-[32px] text-[#006dee] mt-6">Book A Demo</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
