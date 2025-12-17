@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import { HashRouter, Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
 import { UserData } from './Dataprovider/ShareData';
 import EditPanel from './components/Admin/EditPanel.jsx';
+// Add this at the top of your App.js
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const App = () =>{
